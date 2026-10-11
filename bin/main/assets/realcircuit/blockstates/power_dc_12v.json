@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "realcircuit:block/power_dc_12v"
+    }
+  }
+}

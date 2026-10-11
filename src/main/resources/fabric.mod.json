@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "realcircuit",
+  "version": "${version}",
+  "name": "真实物理电路",
+  "description": "基于真实直流电路仿真的 Minecraft 教学模组：节点电压法求解，支持电阻、变阻器、电表、电源、LED、开关、保险丝、灯泡等元件，含过流损坏与串联叠加。",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/realcircuit/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.realcircuit.RealCircuitMod"],
+    "client": ["com.realcircuit.RealCircuitClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

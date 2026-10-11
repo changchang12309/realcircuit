@@ -1,0 +1,19 @@
+# Gradle / Loom
+.gradle/
+build/
+run/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 保留 release 下的可运行 jar
+!release/

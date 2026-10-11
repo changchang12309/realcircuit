@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "facing=north,part=0,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 0 },
+        "facing=north,part=0,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 0 },
+        "facing=north,part=1,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 0 },
+        "facing=north,part=1,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 0 },
+        "facing=north,part=2,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 0 },
+        "facing=north,part=2,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 0 },
+        "facing=east,part=0,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 90 },
+        "facing=east,part=0,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 90 },
+        "facing=east,part=1,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 90 },
+        "facing=east,part=1,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 90 },
+        "facing=east,part=2,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 90 },
+        "facing=east,part=2,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 90 },
+        "facing=south,part=0,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 180 },
+        "facing=south,part=0,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 180 },
+        "facing=south,part=1,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 180 },
+        "facing=south,part=1,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 180 },
+        "facing=south,part=2,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 180 },
+        "facing=south,part=2,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 180 },
+        "facing=west,part=0,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 270 },
+        "facing=west,part=0,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 270 },
+        "facing=west,part=1,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 270 },
+        "facing=west,part=1,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 270 },
+        "facing=west,part=2,damaged=false": { "model": "realcircuit:block/voltmeter_electronic", "y": 270 },
+        "facing=west,part=2,damaged=true": { "model": "realcircuit:block/voltmeter_electronic_damaged", "y": 270 }
+    }
+}

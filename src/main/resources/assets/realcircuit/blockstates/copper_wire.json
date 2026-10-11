@@ -1,0 +1,9 @@
+{
+    "multipart": [
+        { "apply": { "model": "realcircuit:block/copper_wire_dot" } },
+        { "when": { "north": true }, "apply": { "model": "realcircuit:block/copper_wire_side_n" } },
+        { "when": { "south": true }, "apply": { "model": "realcircuit:block/copper_wire_side_s" } },
+        { "when": { "east": true }, "apply": { "model": "realcircuit:block/copper_wire_side_e" } },
+        { "when": { "west": true }, "apply": { "model": "realcircuit:block/copper_wire_side_w" } }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "realcircuit:block/resistor_50_damaged"
+    }
+  }
+}

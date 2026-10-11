@@ -1,0 +1,7 @@
+{
+    "textures": { "wire": "realcircuit:block/copper_wire", "particle": "realcircuit:block/copper_wire" },
+    "elements": [
+        { "from": [5, 0, 0], "to": [11, 2, 6],
+          "faces": { "up": {"texture":"#wire"}, "north":{"texture":"#wire"}, "south":{"texture":"#wire"}, "east":{"texture":"#wire"}, "west":{"texture":"#wire"} } }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "parent": "minecraft:block/block",
+    "textures": {
+        "particle": "realcircuit:block/voltmeter_mechanical",
+        "meter": "realcircuit:block/voltmeter_mechanical",
+        "plus": "realcircuit:block/pole_plus",
+        "minus": "realcircuit:block/pole_minus"
+    },
+    "elements": [
+        {
+            "name": "meter_body",
+            "from": [0, 2, 2],
+            "to": [16, 15, 14],
+            "faces": {
+                "up":    { "texture": "#meter" },
+                "down":  { "texture": "#meter" },
+                "north": { "texture": "#meter" },
+                "south": { "texture": "#meter" },
+                "east":  { "texture": "#meter" },
+                "west":  { "texture": "#meter" }
+            }
+        },
+        {
+            "name": "terminal_left_minus",
+            "from": [1, 3, 0],
+            "to": [4, 6, 3],
+            "faces": {
+                "up":    { "texture": "#minus" },
+                "down":  { "texture": "#minus" },
+                "north": { "texture": "#minus" },
+                "south": { "texture": "#minus" },
+                "east":  { "texture": "#minus" },
+                "west":  { "texture": "#minus" }
+            }
+        },
+        {
+            "name": "terminal_mid_plus",
+            "from": [6, 3, 0],
+            "to": [10, 6, 3],
+            "faces": {
+                "up":    { "texture": "#plus" },
+                "down":  { "texture": "#plus" },
+                "north": { "texture": "#plus" },
+                "south": { "texture": "#plus" },
+                "east":  { "texture": "#plus" },
+                "west":  { "texture": "#plus" }
+            }
+        },
+        {
+            "name": "terminal_right_plus",
+            "from": [12, 3, 0],
+            "to": [15, 6, 3],
+            "faces": {
+                "up":    { "texture": "#plus" },
+                "down":  { "texture": "#plus" },
+                "north": { "texture": "#plus" },
+                "south": { "texture": "#plus" },
+                "east":  { "texture": "#plus" },
+                "west":  { "texture": "#plus" }
+            }
+        }
+    ]
+}

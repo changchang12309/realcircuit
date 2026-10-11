@@ -1,0 +1,20 @@
+{
+    "variants":  {
+                     "facing=north":  {
+                                          "model":  "realcircuit:block/power_student",
+                                          "y":  0
+                                      },
+                     "facing=east":  {
+                                         "model":  "realcircuit:block/power_student",
+                                         "y":  90
+                                     },
+                     "facing=south":  {
+                                          "model":  "realcircuit:block/power_student",
+                                          "y":  180
+                                      },
+                     "facing=west":  {
+                                         "model":  "realcircuit:block/power_student",
+                                         "y":  270
+                                     }
+                 }
+}

@@ -1,0 +1,46 @@
+{
+    "parent":  "minecraft:block/block",
+    "textures":  {
+                     "particle":  "realcircuit:block/rheostat_50",
+                     "up":  "realcircuit:block/rheostat_50",
+                     "down":  "realcircuit:block/rheostat_50",
+                     "east":  "realcircuit:block/rheostat_50",
+                     "west":  "realcircuit:block/rheostat_50",
+                     "north":  "realcircuit:block/pole_plus",
+                     "south":  "realcircuit:block/pole_minus"
+                 },
+    "elements":  [
+                     {
+                         "from":  [
+                                      0,
+                                      0,
+                                      0
+                                  ],
+                         "to":  [
+                                    16,
+                                    16,
+                                    16
+                                ],
+                         "faces":  {
+                                       "south":  {
+                                                     "texture":  "#south"
+                                                 },
+                                       "north":  {
+                                                     "texture":  "#north"
+                                                 },
+                                       "up":  {
+                                                  "texture":  "#up"
+                                              },
+                                       "west":  {
+                                                    "texture":  "#west"
+                                                },
+                                       "down":  {
+                                                    "texture":  "#down"
+                                                },
+                                       "east":  {
+                                                    "texture":  "#east"
+                                                }
+                                   }
+                     }
+                 ]
+}

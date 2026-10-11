@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "facing=north,lit=false": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 0 },
+        "facing=north,lit=true": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 0 },
+        "facing=east,lit=false": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 90 },
+        "facing=east,lit=true": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 90 },
+        "facing=south,lit=false": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 180 },
+        "facing=south,lit=true": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 180 },
+        "facing=west,lit=false": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 270 },
+        "facing=west,lit=true": { "model": "realcircuit:block/bulb_0_3v_0_2a_damaged", "y": 270 }
+    }
+}
+

@@ -1,0 +1,46 @@
+{
+    "parent":  "minecraft:block/block",
+    "textures":  {
+                     "particle":  "realcircuit:block/resistor_1000_damaged",
+                     "up":  "realcircuit:block/resistor_1000_damaged",
+                     "down":  "realcircuit:block/resistor_1000_damaged",
+                     "east":  "realcircuit:block/resistor_1000_damaged",
+                     "west":  "realcircuit:block/resistor_1000_damaged",
+                     "north":  "realcircuit:block/pole_plus",
+                     "south":  "realcircuit:block/pole_minus"
+                 },
+    "elements":  [
+                     {
+                         "from":  [
+                                      0,
+                                      0,
+                                      0
+                                  ],
+                         "to":  [
+                                    16,
+                                    16,
+                                    16
+                                ],
+                         "faces":  {
+                                       "south":  {
+                                                     "texture":  "#south"
+                                                 },
+                                       "north":  {
+                                                     "texture":  "#north"
+                                                 },
+                                       "up":  {
+                                                  "texture":  "#up"
+                                              },
+                                       "west":  {
+                                                    "texture":  "#west"
+                                                },
+                                       "down":  {
+                                                    "texture":  "#down"
+                                                },
+                                       "east":  {
+                                                    "texture":  "#east"
+                                                }
+                                   }
+                     }
+                 ]
+}

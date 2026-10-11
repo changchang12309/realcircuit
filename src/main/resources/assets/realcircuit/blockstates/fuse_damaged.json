@@ -1,0 +1,20 @@
+{
+    "variants":  {
+                     "facing=north":  {
+                                          "model":  "realcircuit:block/fuse_damaged",
+                                          "y":  0
+                                      },
+                     "facing=east":  {
+                                         "model":  "realcircuit:block/fuse_damaged",
+                                         "y":  90
+                                     },
+                     "facing=south":  {
+                                          "model":  "realcircuit:block/fuse_damaged",
+                                          "y":  180
+                                      },
+                     "facing=west":  {
+                                         "model":  "realcircuit:block/fuse_damaged",
+                                         "y":  270
+                                     }
+                 }
+}

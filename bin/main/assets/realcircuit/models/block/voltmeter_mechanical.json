@@ -1,0 +1,6 @@
+﻿{
+    "textures":  {
+                     "all":  "realcircuit:block/voltmeter_mechanical"
+                 },
+    "parent":  "minecraft:block/cube_all"
+}

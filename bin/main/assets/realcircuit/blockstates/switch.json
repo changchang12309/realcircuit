@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=true": {
+      "model": "realcircuit:block/switch_open"
+    },
+    "open=false": {
+      "model": "realcircuit:block/switch_closed"
+    }
+  }
+}

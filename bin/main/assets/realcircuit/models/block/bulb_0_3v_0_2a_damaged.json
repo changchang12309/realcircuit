@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "realcircuit:block/bulb_0_3v_0_2a_damaged"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "variants":  {
+                     "facing=north":  {
+                                          "model":  "realcircuit:block/resistor_10",
+                                          "y":  0
+                                      },
+                     "facing=east":  {
+                                         "model":  "realcircuit:block/resistor_10",
+                                         "y":  90
+                                     },
+                     "facing=south":  {
+                                          "model":  "realcircuit:block/resistor_10",
+                                          "y":  180
+                                      },
+                     "facing=west":  {
+                                         "model":  "realcircuit:block/resistor_10",
+                                         "y":  270
+                                     }
+                 }
+}

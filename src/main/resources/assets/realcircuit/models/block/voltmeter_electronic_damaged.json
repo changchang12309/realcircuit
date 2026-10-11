@@ -1,0 +1,18 @@
+{
+    "parent": "minecraft:block/block",
+    "textures": {
+        "particle": "realcircuit:block/voltmeter_electronic",
+        "all": "realcircuit:block/voltmeter_electronic"
+    },
+    "elements": [
+        {
+            "from": [0, 0, 0],
+            "to": [16, 16, 16],
+            "faces": {
+                "up": { "texture": "#all" }, "down": { "texture": "#all" },
+                "north": { "texture": "#all" }, "south": { "texture": "#all" },
+                "east": { "texture": "#all" }, "west": { "texture": "#all" }
+            }
+        }
+    ]
+}
