@@ -1,6 +1,0 @@
-﻿{
-    "textures":  {
-                     "all":  "realcircuit:block/rheostat_200"
-                 },
-    "parent":  "minecraft:block/cube_all"
-}

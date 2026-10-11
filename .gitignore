@@ -17,3 +17,4 @@ Thumbs.db
 
 # 保留 release 下的可运行 jar
 !release/
+bin/
