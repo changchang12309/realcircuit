@@ -83,5 +83,15 @@
     "item.realcircuit.bulb_0_3v_0_2a_damaged":  "损坏的小灯泡 (0.3V 0.2A)",
     "item.realcircuit.bulb_2_5v_0_3a_damaged":  "损坏的小灯泡 (2.5V 0.3A)",
     "item.realcircuit.bulb_3_8v_0_3a_damaged":  "损坏的小灯泡 (3.8V 0.3A)",
-    "item.realcircuit.copper_wire":  "铜导线"
+    "item.realcircuit.copper_wire":  "铜导线",
+    "advancements.realcircuit.root.title":  "真实物理电路",
+    "advancements.realcircuit.root.description":  "放置任意电路元件，开始搭建属于你的电路",
+    "advancements.realcircuit.simple_circuit.title":  "简易电路图",
+    "advancements.realcircuit.simple_circuit.description":  "用电源、导线、开关和小灯泡搭建出最简单电路，并点亮小灯泡",
+    "advancements.realcircuit.short_circuit.title":  "短路！请停止这种行为",
+    "advancements.realcircuit.short_circuit.description":  "发生电源短路。短路危险，请规范接线！",
+    "advancements.realcircuit.series_circuit.title":  "串联电路",
+    "advancements.realcircuit.series_circuit.description":  "搭建串联电路：让电流依次通过两个小灯泡",
+    "advancements.realcircuit.parallel_circuit.title":  "并联电路",
+    "advancements.realcircuit.parallel_circuit.description":  "搭建并联电路：把两个小灯泡并列接在同一对节点之间"
 }

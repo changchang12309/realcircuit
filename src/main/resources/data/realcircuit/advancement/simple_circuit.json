@@ -1,0 +1,15 @@
+{
+    "display": {
+        "icon": { "id": "realcircuit:bulb_2_5v_0_3a" },
+        "title": { "translate": "advancements.realcircuit.simple_circuit.title" },
+        "description": { "translate": "advancements.realcircuit.simple_circuit.description" },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "realcircuit:root",
+    "criteria": {
+        "grant": { "trigger": "minecraft:impossible" }
+    }
+}

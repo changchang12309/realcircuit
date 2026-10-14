@@ -46,6 +46,17 @@ public abstract class CircuitBlock extends Block {
     /** 子类提供 tooltip 行（中文）——供物品/物品栏展示，由上层按需取用。 */
     public abstract List<Component> circuitTooltip();
 
+    /** 玩家放置电路元件 → 成就钩子（电路入门）。 */
+    @Override
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state,
+                            @org.jetbrains.annotations.Nullable net.minecraft.world.entity.LivingEntity placer,
+                            net.minecraft.world.item.ItemStack stack) {
+        super.setPlacedBy(level, pos, state, placer, stack);
+        if (placer instanceof Player p) {
+            com.realcircuit.world.CircuitAdvancements.onElementPlaced(level, p);
+        }
+    }
+
     /** 方块放置 → 触发所在电路重算。 */
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {

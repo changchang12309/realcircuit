@@ -1,0 +1,15 @@
+{
+    "display": {
+        "icon": { "id": "realcircuit:resistor_10" },
+        "title": { "translate": "advancements.realcircuit.series_circuit.title" },
+        "description": { "translate": "advancements.realcircuit.series_circuit.description" },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "realcircuit:simple_circuit",
+    "criteria": {
+        "grant": { "trigger": "minecraft:impossible" }
+    }
+}

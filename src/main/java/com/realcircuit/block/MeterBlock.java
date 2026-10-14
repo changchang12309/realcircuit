@@ -76,6 +76,7 @@ public class MeterBlock extends CircuitBlock implements EntityBlock {
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        super.setPlacedBy(level, pos, state, placer, stack); // 触发成就钩子等基类逻辑
         if (!multiblock || level.isClientSide()) return;
         Direction facing = state.getValue(FACING);
         Direction row = rowDir(facing);

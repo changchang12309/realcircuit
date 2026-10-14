@@ -1,13 +1,20 @@
 {
     "variants": {
-        "facing=north,lit=false": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
-        "facing=north,lit=true": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
-        "facing=east,lit=false": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
-        "facing=east,lit=true": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
-        "facing=south,lit=false": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
-        "facing=south,lit=true": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
-        "facing=west,lit=false": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 },
-        "facing=west,lit=true": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 }
+        "facing=north,light=0": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
+        "facing=north,light=1": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
+        "facing=north,light=2": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
+        "facing=north,light=3": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 0 },
+        "facing=east,light=0": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
+        "facing=east,light=1": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
+        "facing=east,light=2": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
+        "facing=east,light=3": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 90 },
+        "facing=south,light=0": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
+        "facing=south,light=1": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
+        "facing=south,light=2": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
+        "facing=south,light=3": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 180 },
+        "facing=west,light=0": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 },
+        "facing=west,light=1": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 },
+        "facing=west,light=2": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 },
+        "facing=west,light=3": { "model": "realcircuit:block/bulb_2_5v_0_3a_damaged", "y": 270 }
     }
 }
-

@@ -37,6 +37,7 @@ public class MeterReadingScreen extends Screen {
                 Component.literal(damaged ? "已损坏" : "示数"));
         valueBox.setMaxLength(16);
         valueBox.setEditable(false);
+        valueBox.setTextColor(0xFFFFFF); // 文字全部白色
         if (damaged) {
             valueBox.setValue("已损坏（超量程）");
         } else {
@@ -53,6 +54,7 @@ public class MeterReadingScreen extends Screen {
                 Component.literal("量程"));
         rangeBox.setMaxLength(32);
         rangeBox.setEditable(false);
+        rangeBox.setTextColor(0xFFFFFF);
         rangeBox.setValue(damaged ? "—" : rangeLabel());
         addRenderableWidget(rangeBox);
 
@@ -64,8 +66,8 @@ public class MeterReadingScreen extends Screen {
     public void extractRenderState(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
         super.extractRenderState(g, mouseX, mouseY, partialTick);
         int cx = this.width / 2;
-        // 面板背景（调亮，避免太黑）
-        g.fill(cx - 120, this.height / 2 - 55, cx + 120, this.height / 2 + 65, 0xE850506A);
+        // 面板背景：纯黑（按钮为原版浅灰样式，文字均为白色）
+        g.fill(cx - 120, this.height / 2 - 55, cx + 120, this.height / 2 + 65, 0xFF000000);
     }
 
     @Override

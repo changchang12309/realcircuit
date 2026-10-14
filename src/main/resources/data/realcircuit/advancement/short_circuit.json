@@ -1,0 +1,15 @@
+{
+    "display": {
+        "icon": { "id": "realcircuit:power_damaged" },
+        "title": { "translate": "advancements.realcircuit.short_circuit.title" },
+        "description": { "translate": "advancements.realcircuit.short_circuit.description" },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "realcircuit:root",
+    "criteria": {
+        "grant": { "trigger": "minecraft:impossible" }
+    }
+}

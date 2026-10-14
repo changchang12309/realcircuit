@@ -1,0 +1,15 @@
+{
+    "display": {
+        "icon": { "id": "realcircuit:bulb_0_3v_0_2a" },
+        "title": { "translate": "advancements.realcircuit.parallel_circuit.title" },
+        "description": { "translate": "advancements.realcircuit.parallel_circuit.description" },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "realcircuit:simple_circuit",
+    "criteria": {
+        "grant": { "trigger": "minecraft:impossible" }
+    }
+}

@@ -34,9 +34,9 @@ public class ModBlocks {
         return base(name).mapColor(MapColor.COLOR_BLACK).strength(2.0f);
     }
     private static BlockBehaviour.Properties bulb(String name) {
-        return normal(name).lightLevel(s -> com.realcircuit.block.BulbBlock.LIT != null
-                && s.hasProperty(com.realcircuit.block.BulbBlock.LIT)
-                && s.getValue(com.realcircuit.block.BulbBlock.LIT) ? 15 : 0);
+        // 光照等级随亮度档位变化：0/1/2/3 档 → 0/5/10/15
+        return normal(name).lightLevel(s -> s.hasProperty(com.realcircuit.block.BulbBlock.LIGHT)
+                ? s.getValue(com.realcircuit.block.BulbBlock.LIGHT) * 5 : 0);
     }
 
     // 定值电阻（8 档）+ 损坏版

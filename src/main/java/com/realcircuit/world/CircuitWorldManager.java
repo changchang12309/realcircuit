@@ -77,7 +77,9 @@ public class CircuitWorldManager {
         if (graph.branches.isEmpty()) return;
 
         CircuitSolution sol = DcSolver.solve(graph);
-        applySolution(server, sol);
+        boolean shorted = applySolution(server, sol);
+        boolean hasWire = circuitBlocks.stream().anyMatch(p -> isWire(server.getBlockState(p)));
+        CircuitAdvancements.onSolved(server, center, graph, sol, shorted, hasWire);
     }
 
     private static boolean isCircuitRelated(Level level, BlockPos p) {
@@ -93,6 +95,12 @@ public class CircuitWorldManager {
 
     private static boolean isWire(BlockState s) {
         return s.getBlock() instanceof com.realcircuit.block.CopperWireBlock;
+    }
+
+    /** 原版可导电方块（铁块/铜块）：可充当导线，自身带小电阻（见 ConductorElement）。 */
+    private static boolean isConductor(BlockState s) {
+        String path = blockPath(s.getBlock());
+        return path.equals("iron_block") || path.equals("copper_block");
     }
 
     /** 构建电路图。 */
@@ -126,12 +134,21 @@ public class CircuitWorldManager {
             });
         }
 
-        // 取某位置所在的导线节点；若该位置不是导线但邻接导线，返回邻接导线节点
+        // 导体方块（铁块/铜块）的"体节点"：整块导体视为一个等电位体，电阻由导体支路表达。
+        // 导体链（铜块挨着铜块）通过体节点互相衔接，因此可以整段替代铜导线充当导线。
+        Map<String, Integer> conductorBody = new HashMap<>();
+        java.util.function.Function<BlockPos, Integer> bodyNode = (pos) ->
+                conductorBody.computeIfAbsent(key(pos), k -> newNode(graph));
+
+        // 取某位置所在的节点：导线 → 并查集节点；导体 → 其体节点；其余 → -1
         java.util.function.Function<BlockPos, Integer> nodeAt = (pos) -> {
-            if (isWire(level.getBlockState(pos))) {
+            BlockState ns = level.getBlockState(pos);
+            if (isWire(ns)) {
                 Integer id = nodeOfRoot.get(uf.find(key(pos)));
                 if (id != null) return id;
+                return -1;
             }
+            if (isConductor(ns)) return bodyNode.apply(pos);
             return -1;
         };
 
@@ -158,11 +175,22 @@ public class CircuitWorldManager {
                 int[] mt = bindMeterTerminals(level, p, st, plusDir, nodeAt);
                 na = mt[0]; nb = mt[1];
             }
-            // 导体（铜块/铁块）无 +/− 朝向：把它接在任意两个相邻导线节点之间，正常导通。
+            // 导体（铜块/铁块）无 +/− 朝向：在相邻的导线节点 / 导体体节点之间取两端。
+            // 贴到元件方块时以自身体节点作为一端（元件端子经 nodeAt 也绑定到该体节点），
+            // 因此「电源→铜块链→灯泡」的纯导体链路可以正常导通。
             if (e instanceof com.realcircuit.circuit.elements.ConductorElement) {
                 na = -1; nb = -1;
                 for (Direction d : DIRS) {
-                    int n = nodeAt.apply(p.relative(d));
+                    BlockPos np = p.relative(d);
+                    BlockState ns = level.getBlockState(np);
+                    int n;
+                    if (isWire(ns) || isConductor(ns)) {
+                        n = nodeAt.apply(np);
+                    } else if (ns.getBlock() instanceof CircuitBlock) {
+                        n = bodyNode.apply(p);
+                    } else {
+                        continue;
+                    }
                     if (n < 0) continue;
                     if (na < 0) na = n;
                     else if (n != na) { nb = n; break; }
@@ -251,8 +279,8 @@ public class CircuitWorldManager {
         return null;
     }
 
-    /** 把求解结果应用到世界：过流/反接损坏替换 + 发光状态 + 短路效果。 */
-    private static void applySolution(ServerLevel level, CircuitSolution sol) {
+    /** 把求解结果应用到世界：过流/反接损坏替换 + 发光状态 + 短路效果。返回是否发生短路。 */
+    private static boolean applySolution(ServerLevel level, CircuitSolution sol) {
         // 预先收集所有电源位置：短路爆炸必须发生在电源上，而非开关/导线等其它元件
         java.util.List<BlockPos> sources = new java.util.ArrayList<>();
         for (CircuitElement e : sol.elements()) {
@@ -281,7 +309,8 @@ public class CircuitWorldManager {
                     replaceWithDamaged(level, p, s);   // 反接（电源+ 接灯泡−）→ 错误连接烧坏
                     spawnWhiteParticles(level, p);
                 } else {
-                    setBulbLit(level, p, s, connected && i > 1e-4); // 正向导通才点亮
+                    // 正向导通才点亮；亮度随电流大小分三档，低于起辉电流不发光
+                    setBulbLight(level, p, s, bulbLightTier(bu, connected ? i : 0.0));
                 }
                 continue;
             }
@@ -315,12 +344,26 @@ public class CircuitWorldManager {
                 shortCircuit(level, sp);
             }
         }
+        return anyShorted;
     }
 
-    private static void setBulbLit(ServerLevel level, BlockPos p, BlockState s, boolean lit) {
-        if (s.hasProperty(BulbBlock.LIT) && s.getValue(BulbBlock.LIT) != lit) {
-            level.setBlock(p, s.setValue(BulbBlock.LIT, lit), 3);
+    private static void setBulbLight(ServerLevel level, BlockPos p, BlockState s, int tier) {
+        if (s.hasProperty(BulbBlock.LIGHT) && s.getValue(BulbBlock.LIGHT) != tier) {
+            level.setBlock(p, s.setValue(BulbBlock.LIGHT, tier), 3);
         }
+    }
+
+    /**
+     * 灯泡亮度档位（0=熄灭，1~3=三档光照）：
+     * 正向电流不足额定电流 10% 不发光；其后按 10%~45% / 45%~80% / ≥80% 分为三档。
+     */
+    public static int bulbLightTier(BulbElement bu, double i) {
+        if (i <= 0) return 0;
+        double r = i / Math.max(bu.ratedI, 1e-9);
+        if (r < 0.10) return 0;
+        if (r < 0.45) return 1;
+        if (r < 0.80) return 2;
+        return 3;
     }
 
     /** 电表：把读数写入方块实体（供客户端浮窗）；机械款超量程则置为损坏。 */
