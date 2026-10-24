@@ -64,10 +64,11 @@ public class MeterReadingScreen extends Screen {
 
     @Override
     public void extractRenderState(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
-        super.extractRenderState(g, mouseX, mouseY, partialTick);
         int cx = this.width / 2;
         // 面板背景：纯黑（按钮为原版浅灰样式，文字均为白色）
+        // 注意：必须先画底色再调 super，否则黑底会盖住 EditBox/按钮
         g.fill(cx - 120, this.height / 2 - 55, cx + 120, this.height / 2 + 65, 0xFF000000);
+        super.extractRenderState(g, mouseX, mouseY, partialTick);
     }
 
     @Override
